@@ -1,0 +1,8 @@
+#ansible key oluşturma
+ssh-keygen -t ed25519 -C "Ansible Key"
+
+#ansible key kopyalama
+ssh-copy-id -i /home/theadmin/.ssh/ansible.pub 192.168.1.170
+
+#inventory ping module
+ansible all --key-file ~/.ssh/ansible  -i inventory  -m ping

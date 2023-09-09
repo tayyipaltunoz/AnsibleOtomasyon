@@ -1,0 +1,9 @@
+---
+- name: Nginx Kurulumu
+  hosts: inventory
+  become: yes  # Yükleme işlemi için root izinleri gerektiğinden "yes" olarak ayarlayın
+  tasks:
+    - name: Nginx Paketini Yükle
+      yum:
+        name: nginx
+        state: present  an# "present" ile Nginx kurulumunu yapar, "absent" ile kaldırır
